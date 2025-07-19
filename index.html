@@ -1,0 +1,540 @@
+	 <!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">	
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+			<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+				
+			<style>
+				
+				*{
+					font-family:TimesNewRoman;
+					
+				}
+				body {
+					   background: linear-gradient(130deg, #404445,#303334,#2b2f30,#303334, #404445);
+						  min-height: 100vh;
+						  margin: 0;
+						  font-family: sans-serif;
+						   
+				 }
+				 
+
+				  #welcome-screen {
+					  position: fixed;
+					  top: 0; left: 0;
+					  width: 100%;
+					  height: 100%;
+					  background-color: #000;
+					  color: #ffc412;
+					  display: flex;
+					  justify-content: center;
+					  align-items: center;
+					  font-size: 6vw;
+					  z-index: 9999;
+					  text-align: center;
+					  padding: 0 20px;
+					}
+
+					#typing-text::after {
+					  content: '|';
+					  animation: blink 1s infinite;
+					}
+
+					@keyframes blink {
+					  0%, 100% { opacity: 1; }
+					  50% { opacity: 0; }
+					}
+
+					#main-content {
+					  padding: 20px;
+					  text-align: center;
+					}
+
+					/* Responsive adjustments */
+					@media (max-width: 768px) {
+					  #welcome-screen {
+						font-size: 8vw;
+					  }
+					}
+
+					@media (max-width: 480px) {
+					  #welcome-screen {
+						font-size: 9vw;
+					  }
+					}
+				@keyframes slideUp {
+					  from {
+						opacity: 0;
+						transform: translateY(30px);
+					  }
+					  to {
+						opacity: 1;
+						transform: translateY(0);
+					  }
+					}
+
+					.navbar {
+					  animation: slideUp 1s ease-in-out;
+					}
+
+					/* Modern hover underline + glow */
+					.navbar-nav .nav-link {
+					  position: relative;
+					  color: #e0e1dd;
+					  transition: color 0.3s ease, text-shadow 0.3s ease;
+					}
+
+					.navbar-nav .nav-link::before {
+					  content: "";
+					  position: absolute;
+					  width: 0%;
+					  height: 2px;
+					  bottom: 0;
+					  left: 0;
+					  background-color: #ffc412;
+					  transition: width 0.4s ease-in-out;
+					}
+
+					.navbar-nav .nav-link:hover {
+					  color: #ffc412;
+					  text-shadow: 0 0 8px #ffc412;
+					}
+
+					.navbar-nav .nav-link:hover::before {
+					  width: 100%;
+					}
+				 @keyframes typing {
+					  from { width: 0 }
+					  to { width: 100% }
+					}
+					@keyframes blink {
+					  50% { border-color: transparent }
+					}
+
+					.animated-heading {
+					  font-size: 60px;
+					  font-family: 'Times New Roman';
+					  font-weight: bold;
+					  color: #fff;
+					  white-space: nowrap;
+					  overflow: hidden;
+					  border-right: 4px solid #ffc412;
+					  width: 0;
+					  animation: typing 3s steps(25, end) forwards, blink 0.75s step-end infinite;
+					}
+							
+				.button:hover {
+				  background-color: #04AA6D;
+				  color: white;
+				
+		           
+        }
+
+            		
+				.about-heading {
+					font-weight: bold;
+					color: #e0e1dd;
+					padding-top: 20px;
+					opacity: 0;
+					transform: translateY(20px);
+					animation: fadeSlideIn 1.2s ease-out forwards;
+				  }
+
+				  .animated-border {
+					height: 4px;
+					width: 0;
+					background-color: #ffc412;
+					animation: expandBorder 1s ease-out 1.2s forwards;
+				  }
+
+				  @keyframes fadeSlideIn {
+					to {
+					  opacity: 1;
+					  transform: translateY(0);
+					}
+				  }
+
+				  @keyframes expandBorder {
+					to {
+					  width: 100px;
+					}
+				  }
+				.img-fluid{
+				 
+				 float:center;
+				
+				 border-radius: 100%;        
+				  box-shadow: 0 20px 35px rgb(255, 196, 18); 
+				  width: 400px;
+				  height: 400px;
+				  object-fit: cover;
+				}
+				
+				.col-lg-6 col-sm-12 pe-2{
+				
+				  padding-top: 100px;
+				}
+				.menu-btn {
+					display: inline-block;
+					margin-top: 0.5px;
+					padding: 12px 25px;
+					background: linear-gradient(130deg, #404445,#303334,#2b2f30,#303334, #404445);
+					color: white;
+					font-size: 18px;
+					font-weight: 600;
+					text-decoration: none;
+					border-radius: 30px;
+					transition: background-color 0.3s ease, transform 0.2s ease;
+               }
+			   .menu-btn:hover{
+			     background-color: #ffc412;
+				  transform: scale(1.05);
+				  cursor: pointer;
+			   }
+			   .row text-center justify-content-center mx-auto mt-5{
+			   display:flex; 
+			   flex-wrap:wrap;
+			   }
+			  
+				
+				
+			</style>
+		</head>
+		
+		<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+		<div id="welcome-screen">
+			<h1 id="typing-text"></h1>
+		</div>
+			<div class="container-fluid bg-dark" style="height:4px">  </div>
+			<nav class="navbar navbar-expand-lg ">
+				<div class="container my-2">
+					<a class="navbar-brand" href="#">
+						<img src="D:\photo\z\ChatGPT Image May 9, 2025, 09_07_18 PM.png" style= "height:50px; weight:50px" >
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+						<span class="navbar-toggler-icon"> </span>
+					</button>
+					<div class="collapse navbar-collapse justify-content-end " id="collapsibleNavbar">
+						<ul class="navbar-nav " style="font-family:Times New Roman; font-weight:bold; font-size:18px;">
+							<li class="nav-item"> <a class="nav-link" style="color: #e0e1dd" href="#">Home</a> </li>	
+							<li class="nav-item"> <a class="nav-link" style="color: #e0e1dd" href="#">About</a> </li>		
+							<li class="nav-item"> <a class="nav-link" style="color: #e0e1dd" href="#">Projects</a> </li>
+							<li class="nav-item"> <a class="nav-link" style="color: #e0e1dd" href="#">skills</a> </li>
+							<li class="nav-item"> <a class="nav-link" style="color: #e0e1dd" href="#">Resume</a> </li>
+							
+						</ul>
+					</div>
+				</div>
+			</nav>
+			
+			<div class="d-flex container-fluid"
+		 style="height: 400px; 
+				background-image: linear-gradient(to bottom, rgba(8,13,21, 0.7), rgba(8,13,21, 0.7)), 
+								  url('file:///D:/portfolio/ChatGPT%20Image%20May%207,%202025,%2008_04_57%20PM.png');
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: center;
+				padding-top:100px; padding-bottom:200px">
+	  
+	  <div class="justify-content-center text-center d-flex flex-column mx-auto"style="padding-top:100px;">
+		 <h1 class="rotate" style="font-size:60px; font-family:TimesNewRoman; font-weight:bold; color:#fff"> Hi, I'm 
+		 
+		 <span  style="color:#ffc412">Anurag Saran</span>
+		
+		 </h1> 
+		 <h2 style="font-size:30px; font-family:TimesNewRoman; font-weight:bold; color:#fff"> Bachelor of Computer Science </h2>
+		 <p style="font-size:30px; font-family:TimesNewRoman; font-weight:bold; color:#fff"> Pursuing a Engineering  at
+                <strong>Dayalbagh Education Institute College </strong>, Agra.</p>
+
+	  </div>
+	</div>
+
+			
+			<div class="container mx-auto">
+				
+				
+				<div class="d-flex my-5 mx-auto row" style="display:flex; flex-wrap:wrap; padding-top:50px;">
+					<div class="col-lg-6 col-sm-12 pe-2" style="font-size:17px;padding-top: 30px; padding-left:200px; line-height:1.6rem; word-spacing:0.1em; text-decoration:justify; color:#e0e1dd">
+					<p class="px-2"> Meet Anurag Saran, a dedicated  currently pursuing a BSc in Computer Science at Dayalbagh Education Institute University (DEI). 
+						With  experience in front-end web development, C++, Anurag brings a hands-on approach to building real-world tech solutions. 
+						His portfolio includes projects.
+						Anurag is committed to empowering learners through practical, project-based education and aims to make quality tech learning accessible to all.</p>
+                     <div class="subheading mb-5"style="padding-left:10px;">
+                        Dayalbagh.Uttar Pradesh, Agra 282005 . +91-8979300633 ·
+						<a href="mailto:anuragsaran2303190@dei.ac.in"><span style="color:#ffc412">ANURAGSARAN2303190@DEI.AC.IN</a></span>
+                        <br>
+						<a href="https://www.linkedin.com/in/anurag-saran-2997a3324/" style="color:white;" ><i class="fa fa-linkedin-square" style="font-size:24px "></i></a>
+					   <a  href="https://github.com/AnuragSaran"style="color:white;"><i class="fa fa-github-square" style="font-size:24px; padding-left:10px;"></i></a>
+					 </div>
+					 
+					</div>
+					<div class="col-lg-6 col-sm-12 ps-2"> <img src="D:\portfolio\WhatsApp Image 2024-01-27 at 09.11.05_3429b978.jpg" class="img-fluid"  	width="300px" height="286px"> </div>
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="text-center d-flex justify-content-center flex-column mx-auto mt-5">
+					<h2 class="about-heading"style="font-weight:bold;color:#e0e1dd">PROJECTS</h2>
+					<div class="smallborder animated-border mx-auto" style="height:4px; width:100px; background-color:#ffc412"></div>
+				</div>
+				<div class="row my-5 d-flex flex-wrap" style="display:flex; flex-wrap:wrap;">
+					
+					<div class="col-lg-4 col-sm-6 text-center">
+						<div class="icon icon5 shadow rounded-circle pt-4 mb-2 mx-auto" style="height:100px; width:100px; font-size:35px; color:#fff; background-color:#da1884;"> <i class="fa-solid fa-car"></i> </div>
+						<h3 style="font-size:24px; font-weight:bold;color:#e0e1dd"> Gesture-Controlled Car  </h3>
+						<p style="font-size:17px;color:#e0e1dd"> A gesture-controlled car system using  microcontroller,
+						 enabling users to control vehicle movement through hand gestures for forward, backward, left, and right directions. </p>
+						<a href="menu.html" class="menu-btn">View More</a>
+					</div>
+					<div class="col-lg-4 col-sm-6 text-center">
+						<div class="icon icon2 shadow rounded-circle pt-4 mb-2 mx-auto" style="height:100px; width:100px; font-size:35px; color:#fff; background-color:#ff4c4c;"> <i class="fa-solid fa-calculator"></i> </div>
+						<h3 style="font-size:24px; font-weight:bold;color:#e0e1dd"> Calculator </h3>
+						<p style="font-size:17px;color:#e0e1dd"> A responsive calculator web application built using HTML, CSS, and JS, allowing users to perform basic arithmetic 
+						operations with a user-friendly interface.</p>
+						<a href="menu.html" class="menu-btn">View More</a>
+					</div>
+					
+					<div class="col-lg-4 col-sm-6 text-center">
+						<div class="icon icon3 shadow rounded-circle pt-4 mb-2 mx-auto" style="height:100px; width:100px; font-size:35px; color:#fff; background-color:#34bf49;"> <i class="fa-solid fa-dice"></i> </div>
+						<h3 style="font-size:24px; font-weight:bold;color:#e0e1dd"> Guess The Number Game </h3>
+						<p style="font-size:17px;color:#e0e1dd"> An interactive two-player  game built using HTML, CSS, and JS, 
+						where players take turns to guess a hidden number,  engagement through a fun and competitive interface. </p>
+						<a href="menu.html" class="menu-btn">View More</a>
+					</div>
+					
+					<div class="col-lg-4 col-sm-6 text-center">
+						<div class="icon icon4 shadow rounded-circle pt-4 mb-2 mx-auto" style="height:100px; width:100px; font-size:35px; color:#fff; background-color:#ff9900; margin-top:20px;"> <i class="fa-solid fa-chess-board"></i> </div>
+						<h3 style="font-size:24px; font-weight:bold;color:#e0e1dd"> Tic Tac Toe Game  </h3>
+						<p style="font-size:17px;color:#e0e1dd"> A simple and interactive Tic Tac Toe game built using HTML, CSS, and JavaScript, 
+						allowing two players to play in real-time with visual feedback and win/tie detection. </p>
+						<a href="menu.html" class="menu-btn">View More</a>
+					</div>
+					
+					
+					<div class="col-lg-4 col-sm-6 text-center">
+						<div class="icon icon1 shadow rounded-circle pt-4 mb-2 mx-auto" style="height:100px; width:100px; font-size:35px; color:#fff; background-color:#7f5539;margin-top:20px;"> <i class="fa-regular fa-window-restore"></i> </div>
+						<h3 style="font-size:24px; font-weight:bold;color:#e0e1dd"> Cloud Kitchen </h3>
+						<p style="font-size:17px; color:#e0e1dd"> A dynamic cloud kitchen web application with HTML,CSS, Java Script, PHP and MySQL, enabling users to browse menus, place orders.</p>
+					    <a href="menu.html" class="menu-btn" >View More</a>
+					</div>
+					
+				</div>
+			</div>
+			
+		
+				 <div class="container-fluid" style="height: 50vh; display: flex; justify-content: center; align-items: center; background-color: #ffc412;">
+				  <div style="width: 500px; height: 400px; overflow: hidden; position: relative; border-radius: 10px; box-shadow: 0 0 20px #000;">
+					<div class="slider-container" style="position: relative; width: 500px; height: 400px; border-radius: 10px; box-shadow: 0 0 20px #000; overflow: hidden;">
+					<img class="slider-image active" src="D:\portfolio\image1.jpg" style="position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: opacity 1s ease-in-out;">
+					<img class="slider-image" src="D:\portfolio\image2.jpg" style="position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out;">
+					<img class="slider-image" src="D:\portfolio\image3.jpg" style="position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out;">
+					<img class="slider-image" src="D:\portfolio\image4.jpg" style="position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out;">
+					<img class="slider-image" src="D:\portfolio\image5.jpg" style="position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out;">
+					<img class="slider-image" src="D:\portfolio\image6.jpg" style="position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out;">
+					
+				  </div>
+					</div>
+				  </div>
+			
+
+			<div class="container"> 
+				<div class="text-center d-flex justify-content-center flex-column mx-auto mt-5">
+					<h2 class="about-heading" style="font-weight:bold;color:#e0e1dd">SKILLS</h2>
+					<div class="smallborder animated-border mx-auto" style="height:4px; width:100px; background-color:#ffc412"></div>
+				</div>
+				
+				<div class="row text-center justify-content-center mx-auto mt-5" >	
+					<div class="col-lg-2 col-sm-4 mb-3" style="width:180px;color:#fff"> 
+						<div class="p-2 mx-auto border-dark border-top rounded border-3 shadow border-bottom">
+						  <i class="devicon-cplusplus-plain"style="font-size:60px"></i>
+						 
+          
+							<p> C++ </p>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-sm-4 mb-3" style="width:180px; height:200px ;color:#fff">  
+						<div class="p-2 mx-auto border-dark border-top rounded border-3 shadow border-bottom">
+						 <i class="devicon-python-plain"style="font-size:60px"></i>
+          
+							<p> Python </p>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-sm-4 mb-3" style="width:180px ;color:#fff"> 
+						<div class="p-2 mx-auto border-dark border-top rounded border-3 shadow border-bottom">
+							<i class="devicon-html5-plain"style="font-size:60px"></i>
+							<p> HTML </p>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-sm-4 mb-3" style="width:180px ;color:#fff">  
+						<div class="p-2 mx-auto border-dark border-top rounded border-3 shadow border-bottom">
+						<i class="devicon-css3-plain"style="font-size:60px"></i>
+          
+							<p> CSS </p>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-sm-4 mb-3" style="width:180px ;color:#fff">
+						<div class="p-2 mx-auto border-dark border-top rounded border-3 shadow border-bottom">
+						 <i class="devicon-bootstrap-plain"style="font-size:60px"></i>
+          
+							<p> Bootstrap </p>
+						</div>
+				
+					</div>
+					
+					<div class="col-lg-2 col-sm-4 mb-3" style="width:180px ;color:#fff"> 
+						<div class="p-2 mx-auto border-dark border-top rounded border-3 shadow border-bottom">
+						<i class="devicon-javascript-plain"style="font-size:60px"></i>
+          
+							<p>Java Script </p>
+						</div>
+					</div>
+					
+					<div class="col-lg-2 col-sm-4 mb-3" style="width:180px ;color:#fff"> 
+						<div class="p-2 mx-auto border-dark border-top rounded border-3 shadow border-bottom">
+						 <i class="devicon-arduino-plain"style="font-size:60px"></i>
+          
+							<p> Arduino IDE </p>
+						</div>
+					</div>
+					
+				
+					
+				
+					
+					
+				</div>
+			</div>
+			
+			<div class="container-fluid py-1 mt-5" style="background-image: linear-gradient(to bottom, rgba(8,13,21, 0.7), rgba(8,13,21, 0.7)),url('file:///D:/portfolio/Digital CV and Briefcase Scene.png'); color:#fff; background-attachment: fixed;
+				background-size: cover;
+				background-position: center;">
+				<div class="text-center d-flex justify-content-center flex-column mx-auto mt-5">
+					<h1 class="about-heading"style="font-weight:bold;color:#e0e1dd"> RESUME </h1>
+					<div class="smallborder animated-border mx-auto" style="height:4px; width:100px; background-color:#ffc412"></div>
+				</div>
+				
+				<div class="text-center my-4 pb-1" style="font-size:18px; line-height:1">
+					<div style="background:#fff; color:#000; max-width:700px; margin:40px auto 20px; padding:30px; border-radius:10px; box-shadow:0 4px 20px rgba(0, 0, 0, 0.2); text-align:left;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
+      <div>
+        <h1 style="margin:0; font-size:28px; font-weight:bold;">Anurag Saran</h1>
+        <p style="margin:5px 0 0; color:#555;">Frontend Web Developer</p>
+      </div>
+ 
+	   <div class="about__buttons"  >
+              <a download="" href="D:\portfolio\ANURAG SARAN.pdf" class="button button--flex"style="background-color:#2563eb; color:white; border:none; padding:10px 16px; font-weight:bold; border-radius:6px; cursor:pointer; transition:background-color 0.3s ease;">
+               📥 Download Resume
+              </a>
+            </div>
+    </div>
+
+    <div style="margin-bottom:30px;">
+      <h2 style="font-size:20px; font-weight:bold; margin-bottom:15px;">💼 Work Experience</h2>
+      <div style="margin-bottom:20px;">
+        <h3 style="margin:0; font-size:16px; font-weight:bold;">C++ Programming Intern </h3>
+        <a href="#" style="color:#2563eb; text-decoration:none;">CodSoft  </a>
+        <p style="font-size:13px; color:#888; margin:4px 0;">Sep 2024 – Oct 2024 </p>
+        <p style="margin:6px 0 0; color:#333;">Practiced core OOP concepts: classes, inheritance, polymorphism, encapsulation </p>
+      </div>
+      <br>
+     <div>
+        <h3 style="margin:0; font-size:16px; font-weight:bold;">STEM Workshop </h3>
+        <a href="#" style="color:#2563eb; text-decoration:none;">Dayalbagh Educational Institute  </a>
+        <p style="font-size:13px; color:#888; margin:4px 0;">May 2023</p>
+        <p style="margin:6px 0 0; color:#333;">Explored IoT fundamentals and hands-on Arduino projects and Integrated hardware with software using Arduino Uno</p>
+      </div>
+    </div> 
+
+    <div>
+      <h2 style="font-size:20px; font-weight:bold; margin-bottom:15px;">🎓 Education</h2>
+      <div>
+        <h3 style="margin:0; font-size:16px; font-weight:bold;">Bachelor of Science in Computer Science</h3>
+        <a href="#" style="color:#2563eb; text-decoration:none;">Dayalbagh Education Institute</a>
+        <p style="font-size:13px; color:#888; margin:4px 0;">2023 – ...</p>
+        <p style="margin:6px 0 0; color:#333;">Pursuing with honors. Specialized in web development and software engineering.</p>
+      </div>
+	  <br><br>
+	   <div>
+        <h3 style="margin:0; font-size:16px; font-weight:bold;">Sinior Secondary 12<sup>th</sup></h3>
+        <a href="#" style="color:#2563eb; text-decoration:none;">R.E.I. Intermediate College, Agra, India </a>
+        <p style="font-size:13px; color:#888; margin:4px 0;">2021 – 2023</p>
+       <p style="margin:6px 0 0; color:#333;">Passing with 5 GPA</p>
+      </div>
+	  <br><br>
+	   <div>
+        <h3 style="margin:0; font-size:16px; font-weight:bold;">Secondary 10<sup>th</sup></h3>
+        <a href="#" style="color:#2563eb; text-decoration:none;">R.E.I. Intermediate College, Agra, India  </a>
+        <p style="font-size:13px; color:#888; margin:4px 0;">2019 – 2021</p>
+        <p style="margin:6px 0 0; color:#333;">Passing with 3.0 GPA</p>
+      </div>
+    </div>
+  </div>
+				</div>
+			</div>
+			
+			
+
+
+
+			
+			
+			<div class="container-fluid h25 text-center" style="background-color:#05182e; color:white; padding-top:50px;">
+				<p style="margin-bottom:0px ;text-align:center;padding-bottom:50px"> &copy; 2024 Anurag Saran . All rights reserved.</p>
+			</div>
+		      <script>
+			  
+				  const text = "Welcome to My Profile";
+					const typingText = document.getElementById("typing-text");
+					let typingIndex = 0;
+
+					function type() {
+					  if (typingIndex < text.length) {
+						typingText.innerHTML += text.charAt(typingIndex);
+						typingIndex++;
+						setTimeout(type, 100);
+					  } else {
+						setTimeout(() => {
+						  document.getElementById("welcome-screen").style.display = "none";
+						  document.getElementById("main-content").style.display = "flex";
+						}, 1000);
+					  }
+					}
+					window.onload = type;
+			
+
+    
+	  const images = document.querySelectorAll(".slider-image");
+    let currentIndex = 0;
+
+    function showNextImage() {
+      images[currentIndex].style.opacity = 0;
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].style.opacity = 1;
+    }
+
+    setInterval(showNextImage, 4000);
+    
+
+  </script>
+		</body>
+	</html>
+
+
+
+
+
+
+
+
+
+
+	 
